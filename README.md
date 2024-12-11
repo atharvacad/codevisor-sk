@@ -72,6 +72,6 @@ This project uses Docker to containerize the frontend and backend services. Foll
 
 ### Docker Files
 
-- **Backend Dockerfile**: [backend/dockerfile](codevisor-sk/backend/dockerfile)
-- **Frontend Dockerfile**: [frontend/codevisor/dockerfile](codevisor-sk/frontend/codevisor/dockerfile)
-- **Docker Compose File**: [docker-compose.yaml](codevisor-sk/docker-compose.yaml)
+- **Backend Dockerfile**: [backend/dockerfile](backend/dockerfile)
+- **Frontend Dockerfile**: [frontend/codevisor/dockerfile](frontend/codevisor/dockerfile)
+- **Docker Compose File**: [docker-compose.yaml](docker-compose.yaml)
