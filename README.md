@@ -19,3 +19,59 @@ https://www.youtube.com/watch?v=jiijgr1a--A&t=52s&ab_channel=JadenPeterson
 - [@jadenPete](https://github.com/jadenPete)
 - [@aravinds13](https://github.com/aravinds13)
 - [@shreyash0k](https://github.com/shreyash0k/)
+
+## Building and Running with Docker
+
+This project uses Docker to containerize the frontend and backend services. Follow the steps below to build and run the project using Docker and Docker Compose.
+
+### Prerequisites
+
+- Docker: [Install Docker](https://docs.docker.com/get-docker/)
+- Docker Compose: [Install Docker Compose](https://docs.docker.com/compose/install/)
+
+### Steps
+
+1. Clone the repository:
+
+    ```sh
+    git clone https://github.com/shreyash0k/HackNCState2024.git
+    cd HackNCState2024
+    ```
+
+2. Update the `docker-compose.yaml` file with your environment variables:
+
+    ```yaml
+    version: '3'
+
+    services:
+      backend:
+        build: ./backend
+        ports:
+          - "3000:3000"
+        environment:
+          - MONGODB_URL=your_mongodb_url
+          - MONGODB_DATABASE_NAME=your_database_name
+          - MONGODB_COLLECTION_NAME=your_collection_name
+          - OPENAI_AUTH=your_openai_api_key
+
+      frontend:
+        build: ./frontend/codevisor
+        ports:
+          - "80:80"
+        depends_on:
+          - backend
+    ```
+
+3. Build and run the Docker containers using Docker Compose:
+
+    ```sh
+    docker-compose up --build
+    ```
+
+4. Access the frontend application in your browser at `http://localhost`.
+
+### Docker Files
+
+- **Backend Dockerfile**: [backend/dockerfile](backend/dockerfile)
+- **Frontend Dockerfile**: [frontend/codevisor/dockerfile](frontend/codevisor/dockerfile)
+- **Docker Compose File**: [docker-compose.yaml](docker-compose.yaml)

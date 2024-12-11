@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URL=Enter your MongoDB URL here
+      - MONGODB_DATABASE_NAME=Enter your MongoDB database name here
+      - MONGODB_COLLECTION_NAME=Enter your MongoDB collection name here
+      - OPENAI_AUTH=Enter your OpenAI API key here
+
+  frontend:
+    build: ./frontend/codevisor
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
