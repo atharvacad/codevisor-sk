@@ -34,8 +34,8 @@ This project uses Docker to containerize the frontend and backend services. Foll
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/shreyash0k/HackNCState2024.git
-    cd HackNCState2024
+    git clone https://github.com/atharvacad/codevisor-sk.git
+    cd codevisor-sk
     ```
 
 2. Update the `docker-compose.yaml` file with your environment variables:
