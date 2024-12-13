@@ -1,15 +1,24 @@
 version: '3'
 
 services:
+  database:
+    build: ./database
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./database/data:/data/db
+
   backend:
     build: ./backend
     ports:
       - "3000:3000"
     environment:
-      - MONGODB_URL=Enter your MongoDB URL here
-      - MONGODB_DATABASE_NAME=Enter your MongoDB database name here
-      - MONGODB_COLLECTION_NAME=Enter your MongoDB collection name here
+      - MONGODB_URL=mongodb://database:27017/projects_db
+      - MONGODB_DATABASE_NAME=projects_db
+      - MONGODB_COLLECTION_NAME=projects
       - OPENAI_AUTH=Enter your OpenAI API key here
+    depends_on:
+      - database
 
   frontend:
     build: ./frontend/codevisor
