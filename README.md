@@ -38,8 +38,7 @@ This project uses Docker to containerize the frontend and backend services. Foll
     cd codevisor-sk
     ```
 
-2. Update the `docker-compose.yaml` file with your environment variables:
-
+2. Update the `docker-compose.yaml` file with your environment variables. The database details are already configured to be hosted locally on a Docker container. You only need to provide your OpenAI API key:
     ```yaml
     version: '3'
     services:
