@@ -40,9 +40,8 @@ This project uses Docker to containerize the frontend and backend services. Foll
 
 2. Update the `docker-compose.yaml` file with your environment variables:
 
-```yaml
+    ```yaml
     version: '3'
-
     services:
       database:
         build: ./database
