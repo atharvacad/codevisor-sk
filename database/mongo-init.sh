@@ -1,8 +1,7 @@
 #!/bin/bash
+
+# Exit immediately if a command exits with a non-zero status
 set -e
 
-# Wait for MongoDB to start
-sleep 5
-
-# Import the JSON data into the projects collection
-mongoimport --host localhost --db projects_db --collection projects --file /data/projects.json --jsonArray
+# Import the JSON data into MongoDB
+mongoimport --host localhost --db projects_db --collection projects --type json --file /data/projects.json --jsonArray
