@@ -13,6 +13,9 @@ COPY init.js /docker-entrypoint-initdb.d/init.js
 # Copy the custom entrypoint script
 COPY mongo-init.sh /docker-entrypoint-initdb.d/mongo-init.sh
 
+# Normalize line endings
+RUN sed -i 's/\r$//' /docker-entrypoint-initdb.d/mongo-init.sh
+
 # Ensure the custom entrypoint script is executable
 RUN chmod +x /docker-entrypoint-initdb.d/mongo-init.sh
 
